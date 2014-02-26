@@ -1,0 +1,17 @@
+<%= form_for(@space_cat) do |f| %>
+  <% if @space_cat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@space_cat.errors.count, "error") %> prohibited this space_cat from being saved:</h2>
+
+      <ul>
+      <% @space_cat.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

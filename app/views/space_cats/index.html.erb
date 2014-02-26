@@ -1,0 +1,11 @@
+<% @space_cats.each do |space_cat| %>
+  <%= sync partial: 'cats', resource: space_cat %>
+<% end %>
+<div id="my_cat" class="space_cat" style="position: absolute; left:<%= @my_cat.x_pos %>px; top:<%= @my_cat.y_pos %>px;"></div>
+<canvas></canvas>
+
+<script>
+var space_cats = {
+  url:"<%= space_cat_path(@my_cat, format: :json) %>"
+}
+</script>
